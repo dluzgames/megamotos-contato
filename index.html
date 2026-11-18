@@ -3,523 +3,566 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contato · Mega Motos Paraíso — Peças, Pneus e Oficina</title>
-  <meta name="description" content="Canais oficiais da Mega Motos Paraíso: WhatsApp Vendas para orçamento, Financeiro, Localização, Grupo VIP, Site Oficial e Telefone Fixo. Desde 1997 em Paraíso do Tocantins.">
-  <meta name="theme-color" content="#F4F2EC">
+  <title>Mega Motos Paraíso · Contato</title>
+  <meta name="description" content="Fale com a Mega Motos Paraíso: orçamento pelo WhatsApp, financeiro, localização, grupo de clientes e endereço das duas lojas em Paraíso do Tocantins.">
+  <meta name="theme-color" content="#121315">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mega Motos Paraíso · Canais Oficiais">
-  <meta property="og:description" content="Peças, pneus, acessórios e oficina mecânica em Paraíso do Tocantins/TO. Orçamento rápido pelo WhatsApp.">
+  <meta property="og:title" content="Mega Motos Paraíso · Contato">
+  <meta property="og:description" content="Peças, pneus, acessórios e oficina em Paraíso do Tocantins desde 1997. Peça seu orçamento pelo WhatsApp.">
   <meta property="og:url" content="https://contato.megamotospso.com.br">
-  <meta property="og:image" content="https://contato.megamotospso.com.br/assets/logo.png">
+  <meta property="og:image" content="https://contato.megamotospso.com.br/assets/loja-interior.webp">
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preload" as="image" href="assets/loja-interior.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #F4F2EC;
-      --paper-tint: #EAE6DC;
+      --bg: #121315;
+      --panel: #1B1C1F;
+      --panel-hover: #232428;
+      --line: rgba(243, 241, 234, 0.08);
+      --text: #F3F1EA;
+      --muted: #A9A69D;
+      --yellow: #F2C230;
+      --yellow-press: #E0AF1C;
       --ink: #17181B;
-      --ink-muted: #55524B;
-      --rule: rgba(23, 24, 27, 0.16);
-      --rule-strong: #17181B;
-      --signal: #F2C230;
-      --signal-hover: #E5B41E;
-      --amber: #7A5C00;
+      --open: #6FCF7F;
+      --closed: #E8806B;
+      --radius: 18px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    ::selection {
-      background: var(--signal);
-      color: var(--ink);
-    }
+    ::selection { background: var(--yellow); color: var(--ink); }
 
     html {
-      scroll-behavior: smooth;
       -webkit-tap-highlight-color: transparent;
-      scrollbar-color: var(--ink) var(--paper);
+      -webkit-text-size-adjust: 100%;
+      scrollbar-color: #3A3B40 var(--bg);
     }
 
     body {
       min-height: 100dvh;
-      background-color: var(--paper);
-      color: var(--ink);
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.45;
-      display: flex;
-      justify-content: center;
-      padding: 24px 18px 48px;
     }
 
-    .sheet {
+    a { color: inherit; text-decoration: none; }
+
+    a:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .page {
       width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
     }
 
-    /* Cabeçalho de Catálogo Técnico */
-    .masthead {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding-bottom: 18px;
-      border-bottom: 2px solid var(--rule-strong);
+    /* ---------- Foto da loja ---------- */
+    .hero {
+      margin: 0 -16px;
+      aspect-ratio: 5 / 4;
+      overflow: hidden;
+      background: #000;
     }
 
-    .brand-mark {
-      height: 46px;
-      width: auto;
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 28% 50%;
       display: block;
-      object-fit: contain;
+      animation: settle 1.6s var(--ease) both;
     }
 
-    .brand-meta {
-      text-align: right;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      line-height: 1.3;
+    @keyframes settle {
+      from { transform: scale(1.08); }
+      to { transform: scale(1); }
     }
 
-    .brand-meta strong {
+    @media (min-width: 520px) {
+      .page { padding-top: 24px; }
+      .hero { margin: 0; border-radius: 24px; }
+    }
+
+    /* ---------- Identidade ---------- */
+    .id {
+      padding: 22px 4px 20px;
+    }
+
+    .id h1 { line-height: 0; }
+
+    .id h1 img {
+      width: 210px;
+      height: auto;
       display: block;
-      color: var(--ink);
-      font-weight: 700;
     }
 
-    .intro {
-      padding: 20px 0 22px;
+    .tagline {
+      margin-top: 12px;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 34ch;
     }
 
-    h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(32px, 8vw, 42px);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      line-height: 1.02;
-      color: var(--ink);
-    }
-
-    .lead {
-      margin-top: 8px;
-      font-size: 15px;
-      color: var(--ink-muted);
-      max-width: 38ch;
-    }
-
-    /* Ação Principal: Orçamento no WhatsApp */
-    .cta-primary {
+    .status {
+      margin-top: 12px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 20px;
-      background: var(--signal);
-      color: var(--ink);
-      border: 2px solid var(--ink);
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background-color 0.16s ease, transform 0.16s ease;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      font-size: 13.5px;
+      color: var(--muted);
     }
 
-    .cta-primary:hover {
-      background: var(--signal-hover);
-      transform: translateY(-1px);
+    .status i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
     }
 
-    .cta-primary:active {
-      transform: translateY(0);
-    }
-
-    .cta-primary:focus-visible,
-    .dir-row:focus-visible,
-    .social-link:focus-visible,
-    .store-phone:focus-visible,
-    .footer-link:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 2px;
-    }
-
-    .cta-kicker {
-      display: block;
-      font-size: 11px;
+    .status em {
+      font-style: normal;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      opacity: 0.82;
-      margin-bottom: 2px;
+      color: var(--text);
     }
+
+    .status.is-open i { background: var(--open); }
+    .status.is-open em { color: var(--open); }
+    .status.is-closed i { background: var(--closed); }
+    .status.is-closed em { color: var(--closed); }
+
+    /* ---------- Ação principal ---------- */
+    .cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 72px;
+      padding: 14px 18px;
+      background: var(--yellow);
+      color: var(--ink);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 28px -16px rgba(0, 0, 0, 0.9);
+      transition: background-color 0.2s var(--ease), transform 0.2s var(--ease);
+    }
+
+    .cta:hover { background: var(--yellow-press); }
+    .cta:active { transform: scale(0.985); }
+
+    .cta-icon { width: 30px; height: 30px; flex-shrink: 0; }
+
+    .cta-text { flex: 1; min-width: 0; }
 
     .cta-title {
       display: block;
       font-family: 'Oswald', sans-serif;
-      font-size: 22px;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+
+    .cta-sub {
+      display: block;
+      margin-top: 2px;
+      font-size: 13.5px;
+      font-weight: 500;
+    }
+
+    .cta-arrow {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      transition: transform 0.25s var(--ease);
+    }
+
+    .cta:hover .cta-arrow { transform: translateX(4px); }
+
+    /* ---------- Lista agrupada ---------- */
+    .group {
+      margin-top: 12px;
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 64px;
+      padding: 12px 16px;
+      transition: background-color 0.18s ease;
+    }
+
+    .row + .row { box-shadow: inset 0 1px 0 var(--line); }
+
+    .row:hover { background: var(--panel-hover); }
+
+    .row-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--yellow);
+    }
+
+    .row-text { flex: 1; min-width: 0; }
+
+    .row-title {
+      display: block;
+      font-weight: 600;
+      font-size: 15.5px;
+      line-height: 1.25;
+    }
+
+    .row-sub {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .row-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: #5F5D57;
+      transition: transform 0.2s var(--ease), color 0.2s ease;
+    }
+
+    .row:hover .row-chevron { color: var(--text); transform: translateX(2px); }
+
+    /* ---------- Títulos de seção ---------- */
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 32px 4px 12px;
+    }
+
+    .sec-head h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.01em;
       line-height: 1.1;
     }
 
-    .cta-desc {
-      display: block;
+    .sec-link {
       font-size: 13.5px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-top: 3px;
+      font-weight: 600;
+      color: var(--yellow);
+      white-space: nowrap;
     }
 
-    .cta-arrow {
-      width: 38px;
-      height: 38px;
-      flex-shrink: 0;
-      background: var(--ink);
-      color: var(--signal);
-      border-radius: 3px;
+    .sec-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ---------- Prateleira ---------- */
+    .shelf {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.16s ease;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      margin: 0 -16px;
+      padding: 0 16px 4px;
+      scroll-padding-inline: 16px;
+      scrollbar-width: none;
     }
 
-    .cta-primary:hover .cta-arrow {
-      transform: translateX(3px);
+    @media (min-width: 520px) {
+      .shelf { margin: 0; padding: 0 0 4px; scroll-padding-inline: 0; }
     }
 
-    /* Índice de Canais (Lista com filetes, sem cards genéricos) */
-    .section-head {
-      margin-top: 28px;
-      padding-bottom: 8px;
-      border-bottom: 1.5px solid var(--rule-strong);
-      font-family: 'Oswald', sans-serif;
+    .shelf::-webkit-scrollbar { display: none; }
+
+    .item {
+      flex: 0 0 136px;
+      scroll-snap-align: start;
+    }
+
+    .item-photo {
+      aspect-ratio: 1;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .item-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.35s var(--ease);
+    }
+
+    .item:hover .item-photo img { transform: scale(1.05); }
+
+    .item-name {
+      display: block;
+      margin-top: 8px;
+      padding: 0 2px;
       font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.3;
     }
 
-    .directory {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .dir-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 15px 6px;
-      border-bottom: 1px solid var(--rule);
-      color: var(--ink);
-      text-decoration: none;
-      transition: background-color 0.15s ease, padding-left 0.15s ease;
-    }
-
-    .dir-row:hover {
-      background-color: var(--paper-tint);
-      padding-left: 10px;
-    }
-
-    .dir-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .dir-icon {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      color: var(--ink);
-    }
-
-    .dir-text {
-      min-width: 0;
-    }
-
-    .dir-title {
-      font-weight: 700;
-      font-size: 15.5px;
-      line-height: 1.25;
-      color: var(--ink);
-    }
-
-    .dir-sub {
-      font-size: 13px;
-      color: var(--ink-muted);
-      margin-top: 1px;
-    }
-
-    .dir-action {
+    .item-cat {
+      display: block;
+      padding: 0 2px;
       font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--ink-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      flex-shrink: 0;
-      transition: color 0.15s ease, transform 0.15s ease;
+      color: var(--muted);
     }
 
-    .dir-row:hover .dir-action {
-      color: var(--ink);
-      transform: translateX(2px);
-    }
-
-    /* Faixa de Redes Sociais */
-    .social-strip {
+    /* ---------- Redes ---------- */
+    .social {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-bottom: 1px solid var(--rule);
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow: hidden;
     }
 
-    .social-link {
+    .social a {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 6px;
-      padding: 14px 10px;
-      color: var(--ink);
-      text-decoration: none;
-      transition: background-color 0.15s ease;
+      padding: 16px 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: background-color 0.18s ease;
     }
 
-    .social-link + .social-link {
-      border-left: 1px solid var(--rule);
-      padding-left: 14px;
-    }
+    .social a + a { box-shadow: inset 1px 0 0 var(--line); }
+    .social a:hover { background: var(--panel-hover); }
+    .social svg { width: 22px; height: 22px; color: var(--yellow); }
 
-    .social-link:hover {
-      background-color: var(--paper-tint);
-    }
-
-    .social-link svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .social-name {
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 1.1;
-    }
-
-    .social-handle {
-      font-size: 11.5px;
-      color: var(--ink-muted);
-    }
-
-    /* Unidades (Duas lojas com o mesmo peso) */
-    .stores-grid {
+    /* ---------- Lojas ---------- */
+    .stores {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      padding: 16px 0 20px;
-      border-bottom: 2px solid var(--rule-strong);
+      gap: 10px;
     }
 
-    @media (max-width: 420px) {
-      .stores-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
+    @media (max-width: 380px) {
+      .stores { grid-template-columns: 1fr; }
     }
 
-    .store-col {
+    .store {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      padding: 16px;
+      background: var(--panel);
+      border-radius: var(--radius);
     }
 
-    .store-title {
+    .store h3 {
       font-family: 'Oswald', sans-serif;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
-      color: var(--ink);
+      letter-spacing: 0.01em;
+      line-height: 1.15;
     }
 
-    .store-addr {
-      font-size: 12.5px;
-      color: var(--ink-muted);
-      line-height: 1.4;
+    .store p {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .store-actions {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .store-phone {
-      margin-top: 4px;
-      font-size: 13.5px;
+      font-size: 15px;
       font-weight: 700;
       font-variant-numeric: tabular-nums;
-      color: var(--ink);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: var(--signal);
-      text-decoration-thickness: 2px;
-      align-self: flex-start;
     }
 
-    .store-phone:hover {
-      background: var(--signal);
-    }
+    .store-phone:hover { color: var(--yellow); }
 
-    /* Rodapé */
-    .footer {
-      padding-top: 14px;
-      display: flex;
+    .store-route {
+      display: inline-flex;
       align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--yellow);
+    }
+
+    .store-route svg { width: 14px; height: 14px; transition: transform 0.2s var(--ease); }
+    .store-route:hover svg { transform: translateX(3px); }
+
+    /* ---------- Rodapé ---------- */
+    .foot {
+      margin-top: 32px;
+      padding: 0 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      display: flex;
       justify-content: space-between;
       gap: 12px;
-      font-size: 12px;
-      color: var(--ink-muted);
+      flex-wrap: wrap;
     }
 
-    .footer-link {
-      color: var(--ink);
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    .foot a { color: var(--text); font-weight: 600; }
+    .foot a:hover { color: var(--yellow); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <main class="sheet">
-    <header class="masthead">
-      <img class="brand-mark" src="assets/logo.png" alt="Mega Motos Paraíso">
-      <div class="brand-meta">
-        <strong>Desde 1997</strong>
-        Paraíso do Tocantins · TO
-      </div>
-    </header>
+  <main class="page">
+    <figure class="hero">
+      <img src="assets/loja-interior.webp" width="1200" height="675" alt="Parede de capacetes e balcão da Mega Motos em Paraíso do Tocantins">
+    </figure>
 
-    <section class="intro">
-      <h1>Mega Motos Paraíso</h1>
-      <p class="lead">Peças, pneus, acessórios e oficina mecânica. Escolha o canal de atendimento abaixo.</p>
+    <section class="id">
+      <h1><img src="assets/logo.webp" width="600" height="130" alt="Mega Motos Paraíso"></h1>
+      <p class="tagline">Peças, pneus, acessórios e oficina em Paraíso do Tocantins desde 1997.</p>
+      <p class="status" data-status><i></i><em>Horário</em><span>Seg a Sex 7h–18h · Sáb 7h–12h</span></p>
     </section>
 
-    <a class="cta-primary" href="https://wa.me/message/TJFLHT7C4BYUI1" target="_blank" rel="noopener noreferrer">
-      <div>
-        <span class="cta-kicker">Atendimento imediato</span>
-        <span class="cta-title">WhatsApp Vendas</span>
-        <span class="cta-desc">Faça seu orçamento de peças, pneus e oficina</span>
-      </div>
-      <span class="cta-arrow" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <a class="cta" href="https://wa.me/message/TJFLHT7C4BYUI1" target="_blank" rel="noopener noreferrer">
+      <svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98 1-3.63-.24-.37a9.8 9.8 0 0 1-1.5-5.23c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.95 2.88a9.77 9.77 0 0 1 2.88 6.96c0 5.42-4.42 9.83-9.84 9.83m8.37-18.2A11.76 11.76 0 0 0 12.05.13C5.53.13.22 5.43.22 11.96c0 2.09.55 4.12 1.58 5.92L.12 24l6.27-1.64a11.8 11.8 0 0 0 5.65 1.44h.01c6.52 0 11.83-5.3 11.83-11.83 0-3.16-1.23-6.13-3.46-8.37"/></svg>
+      <span class="cta-text">
+        <span class="cta-title">Pedir orçamento</span>
+        <span class="cta-sub">WhatsApp Vendas · peças, pneus e oficina</span>
       </span>
+      <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
     </a>
 
-    <h2 class="section-head">Canais e Serviços</h2>
-    <nav class="directory" aria-label="Canais de atendimento">
-      <a class="dir-row" href="https://wa.link/i9xpoz" target="_blank" rel="noopener noreferrer">
-        <div class="dir-left">
-          <svg class="dir-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-          <div class="dir-text">
-            <div class="dir-title">WhatsApp Financeiro</div>
-            <div class="dir-sub">Pagamentos, cadastros e emissão de notas fiscais</div>
-          </div>
-        </div>
-        <span class="dir-action" aria-hidden="true">Abrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+    <nav class="group" aria-label="Outros canais">
+      <a class="row" href="https://wa.link/i9xpoz" target="_blank" rel="noopener noreferrer">
+        <svg class="row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+        <span class="row-text"><span class="row-title">WhatsApp Financeiro</span><span class="row-sub">Pagamentos, cadastros e notas fiscais</span></span>
+        <svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-
-      <a class="dir-row" href="https://maps.app.goo.gl/f41KMCQt4yqYvCGBA?g_st=ic" target="_blank" rel="noopener noreferrer">
-        <div class="dir-left">
-          <svg class="dir-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div class="dir-text">
-            <div class="dir-title">Localização</div>
-            <div class="dir-sub">Nosso endereço no Google Maps</div>
-          </div>
-        </div>
-        <span class="dir-action" aria-hidden="true">Rota <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      <a class="row" href="https://maps.app.goo.gl/f41KMCQt4yqYvCGBA?g_st=ic" target="_blank" rel="noopener noreferrer">
+        <svg class="row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="row-text"><span class="row-title">Localização</span><span class="row-sub">Abrir no Google Maps</span></span>
+        <svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-
-      <a class="dir-row" href="https://chat.whatsapp.com/BN5KXPVJCu1DgaTu62h5Em" target="_blank" rel="noopener noreferrer">
-        <div class="dir-left">
-          <svg class="dir-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <div class="dir-text">
-            <div class="dir-title">Grupo de Clientes</div>
-            <div class="dir-sub">Novidades em mercadorias, promoções e sorteios</div>
-          </div>
-        </div>
-        <span class="dir-action" aria-hidden="true">Entrar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      <a class="row" href="https://chat.whatsapp.com/BN5KXPVJCu1DgaTu62h5Em" target="_blank" rel="noopener noreferrer">
+        <svg class="row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="row-text"><span class="row-title">Grupo de Clientes</span><span class="row-sub">Novidades, promoções e sorteios</span></span>
+        <svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-
-      <a class="dir-row" href="https://megamotospso.com.br" target="_blank" rel="noopener noreferrer">
-        <div class="dir-left">
-          <svg class="dir-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          <div class="dir-text">
-            <div class="dir-title">Site Oficial &amp; Dicas da Oficina</div>
-            <div class="dir-sub">Acesse megamotospso.com.br</div>
-          </div>
-        </div>
-        <span class="dir-action" aria-hidden="true">Visitar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      <a class="row" href="https://megamotospso.com.br" target="_blank" rel="noopener noreferrer">
+        <svg class="row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span class="row-text"><span class="row-title">Site oficial</span><span class="row-sub">Loja virtual e dicas da oficina</span></span>
+        <svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
-
-      <a class="dir-row" href="tel:+556336021643">
-        <div class="dir-left">
-          <svg class="dir-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <div class="dir-text">
-            <div class="dir-title">Ligar Fixo · (63) 3602-1643</div>
-            <div class="dir-sub">Atendimento direto na Loja 1 (Centro)</div>
-          </div>
-        </div>
-        <span class="dir-action" aria-hidden="true">Ligar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+      <a class="row" href="tel:+556336021643">
+        <svg class="row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="row-text"><span class="row-title">Ligar fixo</span><span class="row-sub">(63) 3602-1643</span></span>
+        <svg class="row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
     </nav>
 
-    <h2 class="section-head">Redes Sociais</h2>
-    <section class="social-strip" aria-label="Redes sociais">
-      <a class="social-link" href="https://instagram.com/megamotospso?igshid=MmJiY2I4NDBkZg==" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-        <span class="social-name">Instagram</span>
-        <span class="social-handle">@megamotospso</span>
+    <div class="sec-head">
+      <h2>Na prateleira</h2>
+      <a class="sec-link" href="https://megamotospso.com.br/loja/" target="_blank" rel="noopener noreferrer">Ver loja</a>
+    </div>
+    <div class="shelf">
+      <a class="item" href="https://megamotospso.com.br/loja/pneu-levorin-matrix/" target="_blank" rel="noopener noreferrer">
+        <div class="item-photo"><img src="assets/pneu.webp" width="360" height="360" alt="" loading="lazy"></div>
+        <span class="item-name">Pneu Levorin Matrix</span><span class="item-cat">Pneus</span>
       </a>
+      <a class="item" href="https://megamotospso.com.br/loja/capacete-taurus-san-marino-classic/" target="_blank" rel="noopener noreferrer">
+        <div class="item-photo"><img src="assets/capacete.webp" width="360" height="360" alt="" loading="lazy"></div>
+        <span class="item-name">Capacete Taurus San Marino</span><span class="item-cat">Capacetes</span>
+      </a>
+      <a class="item" href="https://megamotospso.com.br/loja/oleo-mobil-super-moto-4t-20w-50/" target="_blank" rel="noopener noreferrer">
+        <div class="item-photo"><img src="assets/oleo.webp" width="360" height="360" alt="" loading="lazy"></div>
+        <span class="item-name">Óleo Mobil Super Moto 4T</span><span class="item-cat">Óleo</span>
+      </a>
+      <a class="item" href="https://megamotospso.com.br/loja/kit-relacao-riffel-titanium/" target="_blank" rel="noopener noreferrer">
+        <div class="item-photo"><img src="assets/relacao.webp" width="360" height="360" alt="" loading="lazy"></div>
+        <span class="item-name">Kit Relação Riffel Titanium</span><span class="item-cat">Transmissão</span>
+      </a>
+    </div>
 
-      <a class="social-link" href="https://www.tiktok.com/@megamotospso?_t=8c4R3Ry8W0c&_r=1" target="_blank" rel="noopener noreferrer">
+    <div class="sec-head"><h2>Siga a Mega</h2></div>
+    <nav class="social" aria-label="Redes sociais">
+      <a href="https://instagram.com/megamotospso" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@megamotospso" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-        <span class="social-name">TikTok</span>
-        <span class="social-handle">Vídeos</span>
+        TikTok
       </a>
-
-      <a class="social-link" href="https://www.facebook.com/profile.php?id=100092386412263&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/profile.php?id=100092386412263" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        <span class="social-name">Facebook</span>
-        <span class="social-handle">Página oficial</span>
+        Facebook
       </a>
+    </nav>
+
+    <div class="sec-head"><h2>Nossas lojas</h2></div>
+    <section class="stores" aria-label="Endereços">
+      <div class="store">
+        <h3>Loja 1 · Centro</h3>
+        <p>Av. Marechal Castelo Branco, 1475 · Setor Central</p>
+        <div class="store-actions">
+          <a class="store-phone" href="tel:+556336021643">(63) 3602-1643</a>
+          <a class="store-route" href="https://www.google.com/maps/search/?api=1&query=Mega+Motos+Av.+Marechal+Castelo+Branco+1475+Para%C3%ADso+do+Tocantins" target="_blank" rel="noopener noreferrer">Como chegar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="store">
+        <h3>Loja 2 · Jardim Paulista</h3>
+        <p>Av. Bernardo Sayão, 2601 · Jardim Paulista</p>
+        <div class="store-actions">
+          <a class="store-phone" href="tel:+556331421643">(63) 3142-1643</a>
+          <a class="store-route" href="https://www.google.com/maps/search/?api=1&query=Mega+Motos+Av.+Bernardo+Say%C3%A3o+2601+Para%C3%ADso+do+Tocantins" target="_blank" rel="noopener noreferrer">Como chegar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
     </section>
 
-    <h2 class="section-head">Nossas Lojas</h2>
-    <section class="stores-grid" aria-label="Endereços das lojas">
-      <div class="store-col">
-        <div class="store-title">Loja 1 — Centro</div>
-        <div class="store-addr">Av. Marechal Castelo Branco, 1475<br>Setor Central · Paraíso do Tocantins/TO</div>
-        <a class="store-phone" href="tel:+556336021643">(63) 3602-1643</a>
-      </div>
-      <div class="store-col">
-        <div class="store-title">Loja 2 — Jardim Paulista</div>
-        <div class="store-addr">Av. Bernardo Sayão, 2601<br>Jardim Paulista · Paraíso do Tocantins/TO</div>
-        <a class="store-phone" href="tel:+556331421643">(63) 3142-1643</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <span>Mega Motos Paraíso · Desde 1997</span>
-      <a class="footer-link" href="https://megamotospso.com.br" target="_blank" rel="noopener noreferrer">megamotospso.com.br</a>
+    <footer class="foot">
+      <span>Mega Motos Paraíso · Paraíso do Tocantins/TO</span>
+      <a href="https://megamotospso.com.br" target="_blank" rel="noopener noreferrer">megamotospso.com.br</a>
     </footer>
   </main>
+
+  <script>
+    (function () {
+      var el = document.querySelector('[data-status]');
+      try {
+        var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Araguaina', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+        var get = function (t) { return parts.find(function (p) { return p.type === t; }).value; };
+        var day = get('weekday');
+        var mins = (+get('hour') % 24) * 60 + +get('minute');
+        var open = false;
+        if (['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(day) > -1) open = mins >= 420 && mins < 1080;
+        if (day === 'Sat') open = mins >= 420 && mins < 720;
+        el.classList.add(open ? 'is-open' : 'is-closed');
+        el.querySelector('em').textContent = open ? 'Aberto agora' : 'Fechado agora';
+      } catch (e) { /* mantém o horário estático */ }
+    })();
+  </script>
 </body>
 </html>

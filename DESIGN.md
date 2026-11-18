@@ -1,21 +1,29 @@
 # Design System — Mega Motos Paraíso (Contato)
 
-## Visual World
-**Catálogo Técnico de Oficina** — papel claro de oficina (`#F4F2EC`) com tinta preta asfalto (`#17181B`) e sinalização em amarelo Mega (`#F2C230`). Sem cards escuros empilhados, sem brilhos neon, sem pílulas decorativas acima do título.
+## Mundo visual
+Interior real da loja: paredes pretas, letreiro amarelo "CAPACETES", vitrine de capacetes. A página começa com a foto real da loja e continua no mesmo preto, com o amarelo Mega como cor de ação.
 
 ## Tokens
-- `--paper`: `#F4F2EC` (fundo principal)
-- `--paper-tint`: `#EAE6DC` (hover de linhas)
-- `--ink`: `#17181B` (tipografia principal, filetes estruturais e bordas)
-- `--ink-muted`: `#55524B` (textos secundários, alto contraste sobre papel)
-- `--signal`: `#F2C230` (CTA principal WhatsApp Vendas e sublinhado de destaque)
-- `--signal-hover`: `#E5B41E`
-- `--rule`: `rgba(23, 24, 27, 0.16)` (divisórias finas entre itens)
+- `--bg` `#121315` fundo · `--panel` `#1B1C1F` grupos · `--panel-hover` `#232428`
+- `--text` `#F3F1EA` · `--muted` `#A9A69D`
+- `--yellow` `#F2C230` ação principal, ícones e links · `--yellow-press` `#E0AF1C`
+- `--open` `#6FCF7F` / `--closed` `#E8806B` (status do horário)
+- Raio `18px` em grupos e CTA; `24px` na foto (desktop)
 
-## Typography
-- **Display / Headings:** `Oswald` (700, caixa alta, tracking `-0.01em` no H1 e `0.1em` nos cabeçalhos de seção).
-- **Body / UI:** `Public Sans` (400–700, `tabular-nums` nos telefones).
+## Tipografia
+- `Oswald` 700, caixa alta: CTA, títulos de seção, nomes das lojas
+- `Public Sans` 400–700: textos; `tabular-nums` nos telefones
 
-## Layout Grammar
-- Coluna única centrada (`max-width: 480px`) para leitura rápida no celular.
-- **Hierarquia:** Masthead com logo + ano de fundação (`1997`) → Título + descrição curta → Faixa sólida amarela (**WhatsApp Vendas**) → Lista de canais em índice com filetes de `1px` (sem cards) → Faixa horizontal de 3 colunas para redes sociais → Grade igualitária de 2 colunas para **Loja 1 — Centro** e **Loja 2 — Jardim Paulista**.
+## Estrutura
+1. Foto real da loja (5:4, ocupa toda a largura no celular)
+2. Logo + frase + status "Aberto/Fechado agora" (Seg–Sex 7h–18h · Sáb 7h–12h, `America/Araguaina`)
+3. CTA amarelo único: Pedir orçamento (WhatsApp Vendas)
+4. Lista agrupada estilo app: Financeiro, Localização, Grupo, Site, Ligar fixo (por último)
+5. Prateleira com rolagem horizontal: produtos reais com link para a loja virtual
+6. Redes sociais (3 colunas)
+7. Duas lojas com o mesmo peso, cada uma com telefone e "Como chegar"
+
+## Regras
+- Sem "(Principal)" nas lojas; Loja 1 e Loja 2 têm o mesmo tratamento.
+- Só uma animação: a foto assenta (escala 1.08 → 1) ao carregar; desligada com `prefers-reduced-motion`.
+- Sem brilho neon, sem gradiente em texto, sem rótulos decorativos acima dos títulos.
